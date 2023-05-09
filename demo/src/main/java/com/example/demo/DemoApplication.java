@@ -9,11 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.demo.entity.Course;
 import com.example.demo.repository.CourseRepository;
+import com.example.demo.repository.StudentRepository;
 
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 	@Autowired
 	private CourseRepository courseRepository;
+	@Autowired
+	private StudentRepository studentRepository;
+	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -30,6 +34,9 @@ public class DemoApplication implements CommandLineRunner {
 		courseRepository.save(new Course("GCP in 100 steps"));
 		// EntityManager
 		courseRepository.playWithEntityManager();
+		studentRepository.playWithEntityManager();
+		
+		logger.info("Student information -> :::" , studentRepository.findById(2001L));
 	}
 
 }
