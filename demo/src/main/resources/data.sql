@@ -13,7 +13,12 @@ insert into Student (id, name, passport_id) values (2002, 'Sunil', 3002);
 insert into Student (id, name, passport_id) values (2003, 'Anasuyamma', 3003);
 insert into Student (id, name, passport_id) values (2004, 'Narashimha Reddy', 3004);
 
-insert into Review (id, rating, description) values (4001, '4', 'Awsome course');
-insert into Review (id, rating, description) values (4002, '4.5', 'Excellent course');
-insert into Review (id, rating, description) values (4003, '5', 'Over the top course');
-insert into Review (id, rating, description) values (4004, '4.5', 'Awsome course');
+insert into Review (id, rating, description, course_id) values (4001, '4', 'Awsome course', 1001);
+insert into Review (id, rating, description, course_id) values (4002, '4.5', 'Excellent course', 1002);
+insert into Review (id, rating, description, course_id) values (4003, '5', 'Over the top course', 1003);
+insert into Review (id, rating, description, course_id) values (4004, '4.5', 'Awsome course', 1004);
+
+insert into student_course (student_id, course_id) values (2001, 1003);
+insert into student_course (student_id, course_id) values (2002, 1003);
+insert into student_course (student_id, course_id) values (2003, 1003);
+insert into student_course (student_id, course_id) values (2004, 1002);
